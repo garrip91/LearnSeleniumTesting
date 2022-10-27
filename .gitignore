@@ -1,2 +1,4 @@
 __pycache__/
 *.pyc
+chromedriver
+GitHub_tokens.txt
