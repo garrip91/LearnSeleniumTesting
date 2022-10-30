@@ -18,14 +18,26 @@ env = environ.Env(
 
 environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
 
-current_step_url = 'https://stepik.org/lesson/228249/step/6?auth=login&unit=200781'
-link = 'http://suninjuly.github.io/execute_script.html'
+current_step_url = 'https://stepik.org/lesson/184253/step/4?auth=login&unit=158843'
+link = 'http://suninjuly.github.io/alert_accept.html'
 
 try:
     # Подготовка для теста:
     browser = webdriver.Chrome()
     # Открываем нужную страницу:
     browser.get(link)
+    
+    #time.sleep(5)
+    # Отправляем заполненную форму:
+    button = browser.find_element(By.CSS_SELECTOR, 'button[type="submit"]')
+    button.click()
+    #time.sleep(5)
+    
+    confirm = browser.switch_to.alert
+    confirm_text = confirm.text
+    confirm.accept()
+    
+    #time.sleep(10)
     
     def calc(x: str) -> str:
         return str(math.log(abs(12*math.sin(int(x)))))
@@ -35,19 +47,8 @@ try:
     x = x_element.text
     y = calc(x)
     
-    # Скроллим страницу вниз для доступности нужных элементов:
-    #// javascript
-    #browser.execute_script('button=document.getElementsByTagName("button")[0];button.scrollIntoView(true);')
-    browser.execute_script('window.scrollTo(0, 200)')
-    
     # Находим и заполняем нужное поле:
     answer = browser.find_element(By.CSS_SELECTOR, 'input[id="answer"]').send_keys(y)
-    
-    # Находим и ставим галочку в чекбоксе:
-    robotCheckbox = browser.find_element(By.CSS_SELECTOR, 'input[id="robotCheckbox"]').click()
-    
-    # Находим и выбираем нужную нам радио-кнопку:
-    robotsRule = browser.find_element(By.CSS_SELECTOR, 'input[id="robotsRule"]').click()
     
     # Отправляем заполненную форму:
     button = browser.find_element(By.CSS_SELECTOR, 'button[type="submit"]')
@@ -64,6 +65,7 @@ try:
     button = browser.find_element(By.CSS_SELECTOR, 'a[class="ember-view navbar__auth navbar__auth_login st-link st-link_style_button"]')
     button.click()
     time.sleep(30)
+    # email = browser.find_element(By.CSS_SELECTOR, 'input[id="id_login_email"]').send_keys('garrip91@yandex.ru')
     email = browser.find_element(By.CSS_SELECTOR, 'input[id="id_login_email"]').send_keys(env('EMAIL'))
     password = browser.find_element(By.CSS_SELECTOR, 'input[id="id_login_password"]').send_keys(env('PASSWORD'))
     button = browser.find_element(By.CSS_SELECTOR, 'button[type="submit"]')

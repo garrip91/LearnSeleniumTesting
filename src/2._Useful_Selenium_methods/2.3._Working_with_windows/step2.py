@@ -14,7 +14,7 @@ try:
     time.sleep(5)
     #browser.execute_script('alert("Hello!");')
     #browser.execute_script('confirm("Accept or dismiss?");')
-    browser.execute_script('prompt("How old are you?");')
+    #browser.execute_script('prompt("How old are you?");')
     time.sleep(5)
     
     # alert = browser.switch_to.alert
@@ -26,11 +26,11 @@ try:
     # print(confirm_text)
     # confirm.accept()
     # confirm.dismiss()
-    prompt = browser.switch_to.alert
-    time.sleep(5)
-    prompt.send_keys('Yes!')
-    time.sleep(5)
-    prompt.accept()
+    # prompt = browser.switch_to.alert
+    # time.sleep(5)
+    # prompt.send_keys('Yes!')
+    # time.sleep(5)
+    # prompt.accept()
     
 finally:
     # Ожидаем 10 секунд, чтобы визуально оценить результаты прохождения скрипта:
