@@ -65,7 +65,6 @@ try:
     button = browser.find_element(By.CSS_SELECTOR, 'a[class="ember-view navbar__auth navbar__auth_login st-link st-link_style_button"]')
     button.click()
     time.sleep(30)
-    # email = browser.find_element(By.CSS_SELECTOR, 'input[id="id_login_email"]').send_keys('garrip91@yandex.ru')
     email = browser.find_element(By.CSS_SELECTOR, 'input[id="id_login_email"]').send_keys(env('EMAIL'))
     password = browser.find_element(By.CSS_SELECTOR, 'input[id="id_login_password"]').send_keys(env('PASSWORD'))
     button = browser.find_element(By.CSS_SELECTOR, 'button[type="submit"]')

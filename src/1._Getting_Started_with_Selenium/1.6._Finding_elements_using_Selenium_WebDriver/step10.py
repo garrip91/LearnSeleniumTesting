@@ -11,23 +11,36 @@ try:
     # Открываем нужную страницу:
     browser.get(link)
     
-    # Находим нужные элементы на странице:
-    elements = browser.find_elements(By.CSS_SELECTOR, 'input[type="text"]')
+    # # Находим нужные элементы на странице:
+    # elements = browser.find_elements(By.CSS_SELECTOR, 'input[type="text"]')
     
-    # Заполняем обязательные поля формы значениями из словаря:
-    values_dict = {
-        1: 'Имя',
-        2: 'Фамилия',
-        3: 'Почта'
-    }
-    n = 1
-    for element in elements:
-        if len(values_dict) == 0:
-            break
-        else:
-            element.send_keys(values_dict[n])
-            del values_dict[n]
-            n += 1
+    # # Заполняем обязательные поля формы значениями из словаря:
+    # values_dict = {
+        # 1: 'Имя',
+        # 2: 'Фамилия',
+        # 3: 'Почта'
+    # }
+    # n = 1
+    # for element in elements:
+        # if len(values_dict) == 0:
+            # break
+        # else:
+            # element.send_keys(values_dict[n])
+            # del values_dict[n]
+            # n += 1
+    
+    # Через блок вёрстки страницы, содержащий нужные нам (обязательные к заполнению) поля, находим первое обязательное поле:
+    input1 = browser.find_element(By.CSS_SELECTOR, 'div[class="first_block"] div[class="form-group first_class"] input[type="text"]')
+    # Заполняем это обязательное поле формы:
+    input1.send_keys('Имя')
+    # Далее то же самое проделываем со вторым обязательным полем:
+    input2 = browser.find_element(By.CSS_SELECTOR, 'div[class="first_block"] div[class="form-group second_class"] input[type="text"]')
+    # ...и заполняем его:
+    input2.send_keys('Фамилия')
+    # Ну и с третьим обязательным полем проделываем то же самое:
+    input3 = browser.find_element(By.CSS_SELECTOR, 'div[class="first_block"] div[class="form-group third_class"] input[type="text"]')
+    # ...и заполняем его:
+    input3.send_keys('Почта')
     
     # Отправляем заполненную форму:
     button = browser.find_element(By.CSS_SELECTOR, 'button[type="submit"]')
