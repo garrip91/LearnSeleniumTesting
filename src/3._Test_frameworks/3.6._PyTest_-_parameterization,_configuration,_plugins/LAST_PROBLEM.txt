@@ -1,0 +1,15 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.6, pytest-7.2.0, pluggy-1.0.0 -- /home/garrip91/Programming/LearnSeleniumTesting/venv/bin/python3
+cachedir: .pytest_cache
+rootdir: /home/garrip91/Programming/LearnSeleniumTesting/src, configfile: pytest.ini
+collecting ... collected 0 items / 1 error
+
+==================================== ERRORS ====================================
+_ ERROR collecting 3._Test_frameworks/3.6._PyTest_-_parameterization,_configuration,_plugins/test_step5.py _
+test_step5.py:27: in <module>
+    @pytest.mark.skipif(browser.find_element(By.CSS_SELECTOR, 'button') != 'true', reason='ELEMENT WAS NOT FOUND!')
+E   AttributeError: 'function' object has no attribute 'find_element'
+=========================== short test summary info ============================
+ERROR test_step5.py - AttributeError: 'function' object has no attribute 'fin...
+!!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!
+=============================== 1 error in 0.10s ===============================

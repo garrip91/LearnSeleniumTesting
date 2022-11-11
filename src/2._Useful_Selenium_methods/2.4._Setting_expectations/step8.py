@@ -51,6 +51,7 @@ try:
     answer = browser.find_element(By.CSS_SELECTOR, 'input[id="answer"]').send_keys(y)
     
     # Отправляем заполненную форму:
+    #button = browser.find_element(By.CSS_SELECTOR, 'XYZ')
     button = browser.find_element(By.CSS_SELECTOR, 'button[id="solve"]')
     button.click()
     
