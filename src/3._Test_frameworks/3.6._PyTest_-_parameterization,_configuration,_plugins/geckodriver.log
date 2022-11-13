@@ -1,0 +1,17 @@
+1668346368907	geckodriver	INFO	Listening on 127.0.0.1:47087
+1668346371090	mozrunner::runner	INFO	Running command: "/snap/firefox/current/firefox.launcher" "--marionette" "--remote-debugging-port" "41211" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofilePuLN4Q"
+Gtk-Message: 16:32:51.197: Not loading module "atk-bridge": The functionality is provided by GTK natively. Please try to not load it.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+1668346377797	Marionette	INFO	Marionette enabled
+1668346377818	Marionette	INFO	Listening on port 42385
+Read port: 42385
+ATTENTION: default value of option mesa_glthread overridden by environment.
+Read port: 42385
+WebDriver BiDi listening on ws://127.0.0.1:41211
+1668346379590	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofilePuLN4Q/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:41211/devtools/browser/f8230d81-c25d-4b8d-9f8a-5c3335029c5e
+JavaScript error: http://selenium1py.pythonanywhere.com/en-gb/, line 758: ReferenceError: oscar is not defined
+1668346396843	Marionette	INFO	Stopped listening on port 42385
+JavaScript error: resource://gre/modules/UrlClassifierListManager.jsm, line 693: TypeError: this.tablesData[table] is undefined
