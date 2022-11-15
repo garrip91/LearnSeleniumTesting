@@ -29,6 +29,7 @@ from selenium.webdriver.support import expected_conditions as EC
 
 class TestResult:
     
+    @pytest.mark.parametrize('language', language)
     def test_pieces_of_the_message(self, browser, language):
         link = F'http://selenium1py.pythonanywhere.com/{language}/catalogue/coders-at-work_207/'
         browser.get(link)
