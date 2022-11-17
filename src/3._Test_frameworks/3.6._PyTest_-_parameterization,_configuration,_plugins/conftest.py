@@ -22,6 +22,7 @@ def browser(request):
         # ОТДЕЛЬНО ДОБАВЛЕНО:
         options = Options()
         options.add_experimental_option('prefs', {'intl.accept_languages': user_language})
+        #options.add_experimental_option('w3c', False)
         browser = webdriver.Chrome(options=options)
         #######################
         #browser = webdriver.Chrome()
@@ -38,9 +39,3 @@ def browser(request):
     yield browser
     print('\nquit browser...')
     browser.quit()
-    
-    #options = Options()
-    #user_language = 'en'
-    #options.add_experimental_option('prefs', {'intl.accept_languages': user_language})
-    #options.add_experimental_option('prefs', {'intl.accept_languages': 'ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7'})
-    #browser = webdriver.Chrome(options=options)
